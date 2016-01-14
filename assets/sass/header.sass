@@ -1,2 +1,159 @@
 @import "bourbon"
 
+$text_fz: 19px
+$gold_color: #9e8348
+
+.gold_bg
+	background-color: $gold_color
+
+.clearfix:after
+	clear: both
+	display: block
+	content: ''
+
+.gold_text
+	color: $gold_color
+
+.gold_border
+	border-color: $gold_color
+
+.ttu
+	text-transform: uppercase
+
+.dib
+	display: inline-block
+	vertical-align: middle
+
+.picnic_carousel
+	opacity: 0
+	-webkit-transition: all 0.3s ease
+	-o-transition: all 0.3s ease
+	transition: all 0.3s ease
+	position: relative
+	
+	&.visible
+		opacity: 1
+
+	.row
+		margin: 0
+
+	.nav-btn
+		position: absolute
+		top: 50%
+		left: 0
+		width: 22px
+		height: 43px
+		background: url("../images/icons-s2baca487d5.png") no-repeat 0 -5591px
+		margin-top: -22px
+		cursor: pointer
+
+		&:hover
+			background-position: -22px -5591px
+		
+		&.nav-next
+			left: auto
+			right: 0
+			background-position: 0 -5543px
+
+		&.nav-next:hover
+			background-position: -22px -5543px
+	
+.landrover_page
+	position: relative
+	z-index: 2
+	overflow: hidden
+	padding-top: 113px
+	min-width: 1100px
+
+	.col-xs-12, .row, .container-not-responsive
+		border-bottom: none !important
+
+	p
+		max-height: 5000px
+	
+	nav
+		-webkit-transition: all 0.3s ease
+		-o-transition: all 0.3s ease
+		transition: all 0.3s ease
+
+	> section
+		background: #fff
+		position: relative
+
+	.container, .container-not-responsive
+		width: 1050px
+		margin: 0 auto
+		position: relative
+
+	#contacts
+		background-color: rgba(0,0,0,0.5)
+	
+	.nav-white .nav__back a:hover
+		@extend .gold_text
+
+	.section__space b
+		@extend .gold_bg
+
+	.nav-white .nav__menu .nav__menu__contacts .btn:hover,
+	.feedback .feedback__email .form-group .btn:hover
+		@extend .gold_bg
+		@extend .gold_border
+	
+	.pagenavi .pagenavi__post a
+		font-size: 18px
+
+	.pagenavi .pagenavi__post a:hover, .pagenavi .pagenavi__post a.is-active
+		@extend .gold_border
+		@extend .gold_text
+
+	.vista
+		background-color: $gold_color
+	
+	.step_number
+		display: inline-block
+		height: 36px
+		width: 36px
+		font-size: 24px
+		line-height: 36px
+		vertical-align: middle
+		text-align: center
+		color: #fff
+		font-family: h400
+		margin-bottom: 25px
+
+	.gray_block
+		height: 600px
+		width: 2000%
+		background: #efefef
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -1000%
+		-webkit-transform: skew(-20deg, -6.7deg)
+		-ms-transform: skew(-20deg, -6.7deg)
+		-o-transform: skew(-20deg, -6.7deg)
+		transform: skew(-20deg, -6.7deg)
+		z-index: 1
+
+		&+*
+			position: relative
+			z-index: 2
+
+	.nav-white .nav__back a .icon__top
+		background: transparent url(../images/icons-s2baca487d5.png) 0 -5666px no-repeat
+
+	.nav-white .nav__back a:hover .icon__top
+		background-position: -43px -5639px
+	
+	.pagenavi .pagenavi__post.is-right, .pagenavi .pagenavi__post.is-left
+		a:before
+			background-image: url(../images/icons-s2baca487d5.png)
+
+		&.is-right
+			a:hover
+				&:before
+					background-position: -22px -5543px	
+
+		&.is-left
+			a:hover:before
+				background-position: -22px -5591px

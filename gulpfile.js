@@ -31,7 +31,7 @@ function notifyLiveReload(event) {
 }
 
 gulp.task('styles', function () {
-	gulp.src('/assets/sass/*.sass')
+	gulp.src('assets/sass/*.sass')
 	.pipe(sass({
 		includePaths: require('node-bourbon').includePaths
 	})).on('error', sass.logError)
@@ -45,7 +45,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('jade', function() {
-    return gulp.src('/assets/jade/*.jade')
+    return gulp.src('assets/jade/*.jade')
         .pipe(jade({
         	pretty: true
         })).on('error', console.log)
@@ -53,10 +53,10 @@ gulp.task('jade', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('/assets/sass/*.sass', ['styles']);
-	gulp.watch('/assets/jade/*.jade', ['jade']);
-	gulp.watch('/assets/app/*.css', notifyLiveReload);
-	gulp.watch('/assets/app/*.html', notifyLiveReload);
+	gulp.watch('assets/sass/*.sass', ['styles']);
+	gulp.watch('assets/jade/*.jade', ['jade']);
+	gulp.watch('assets/app/*.css', notifyLiveReload);
+	gulp.watch('assets/app/*.html', notifyLiveReload);
 });
 
 gulp.task('default', ['styles', 'jade', 'express', 'livereload', 'watch'], function() {
