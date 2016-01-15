@@ -70,6 +70,8 @@ body
 	+sprite($s-right_yellow)
 	&:hover
 		+sprite($s-right_gray)
+.icon_quote
+	+sprite($s-quote)
 /* end icon */
 
 
@@ -111,6 +113,7 @@ body
 	font-size: $f-h1
 	color: $c-h2
 	margin: 0 0 10px
+	text-transform: uppercase
 .h2__border
 	width: 163px
 	height: 1px
@@ -187,8 +190,35 @@ body
 	font-weight: normal
 	margin: 0
 	line-height: 1
-
 /* end .carousel-customer-item */
+
+
+/* carousel-function-text */
+.carousel-function-text__desc
+	font-weight: bold
+	margin: 0 220px
+/* end carousel-function-text */
+
+/* carousel-function */
+.carousel-function__navigation
+	position: absolute
+	top: 115px
+	z-index: 2
+
+.carousel-function__nav
+	position: relative
+	width: 100%
+	height: 100%
+.carousel-function__prev
+	@extend .carousel-function__navigation
+	left: 60px
+.carousel-function__next
+	@extend .carousel-function__navigation
+	right: 60px
+/* end carousel-function */
+
+
+
 
 /* .section-1 */
 .section-1
@@ -236,9 +266,137 @@ body
 	margin: 65px 70px 0
 .section-2__carousel-customer
 	margin: 80px 55px 0
-	
 /* end section-2 */
 
+/* section-3 */
+.section-3
+	background-color: #003571
+	+linear-gradient( #1e5e97 0%, #003571 30%)
+	color: #fff
+	padding: 100px 0 0
+	height: 983px
+	box-sizing: border-box
+	position: relative
+	overflow: hidden
+.section-3__h2-text
+	color: #fff
+.section-3__bacground
+	position: absolute
+	top: 0
+	left: 50%
+	+transform(translateX(-50%))
+	background-image: url('img/concept.png')
+	background-position: center center
+	background-size: cover
+	height: 983px
+	width: 3589px
+/* end section-3 */
+
+/* section-4 */
+.section-4
+	padding-top: 180px
+	position: relative
+.section-4__client
+	height: 610px
+.section-4__investors
+	height: 515px
+.section-4__journalist
+	height: 543px
+.section-4__desc
+	margin: 30px
+.section-4__image
+	position: absolute
+.section-4__image_tablet
+	top: 90px
+	left: 50%
+	margin-left: -85px
+.section-4__image_desctop
+	top: 475px
+	right: 50%
+	margin-right: 85px
+.section-4__image_laptop
+	top: 1090px
+	left: 50%
+	margin-left: -250px
+/* end section-4 */
+
+/* section-5 */
+.section-5
+	+linear-gradient( #1e5e97 0%, #003571 50%)
+	background-color: #003571
+	color: #fff
+	padding: 140px 0 130px
+.section-5__icon
+	float: left
+	width: 291px
+	margin-left: 45px
+.section-5__desc
+	margin-left: 405px
+	margin-right: 60px
+.section-5__name
+	margin: 0
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: $f-name
+.section-5__position
+	font-size: $f-desc
+	margin: 5px 0
+.section-5__hr
+	width: 450px
+	height: 1px
+	background-color: $c-yellow
+.section-5__text
+	font-size: $f-desc
+	margin: 10px 0
+/* end section-5 */
+
+/* section-6 */
+.section-6
+	text-align: center
+	padding-top: 60px
+.section-6__desc_first
+	margin-top: 60px
+.section-6__picture_icon
+	margin-top: 10px
+.section-6__desc_last
+	margin-top: 35px
+.section-6__picture_desing
+	margin-top: 58px
+/* end section-6 */
+
+
+/* section-7 */
+.section-7
+	background-color: #003571
+	+linear-gradient( #1e5e97 0%, #003571 30%)
+	color: #fff
+	padding: 30px 0 0
+.section-7__h2-text
+	color: #fff
+.section-7__h3
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: $f-name
+	text-align: center
+	margin: 40px 0 0
+.section-7__carousel-function-text
+	margin-top: 17px
+.section-7__monitor
+	height: 630px
+	background-image: url('img/monitor.png')
+	background-repeat: no-repeat
+	background-position: center top
+	position: relative
+	margin-top: 50px
+.section-7__carousel-function-img
+	position: absolute
+	top: 32px
+	width: 665px
+	height: 375px
+	left: 50%
+	+transform(translateX(-50%))
+
+/* end section-7 */
 
 //ALWAYS END
 @import "_media.sass"
