@@ -26,5 +26,8 @@
     "vinyl": "^0.5.1",
     "win-spawn": "^2.0.0",
     "gulp-jade": "~1.1.0"
+  },
+  "dependencies": {
+    "gulp.spritesmith": "~6.0.1"
   }
 }

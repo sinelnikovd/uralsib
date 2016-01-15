@@ -1,7 +1,11 @@
 @import "bourbon"
 @import "_normalize.sass"
 @import "_vars.sass"
+@import "_fonts.sass"
 @import "header.sass"
+
+@import "libs/sprite.sass"
+
 
 *::-webkit-input-placeholder
 	color: #424242
@@ -32,16 +36,151 @@ body
 	font-size: 17px
 	min-width: 1200px
 	position: relative
-	line-height: 1.6
+	line-height: 1.3
 	font-family: "HelveticaNeueLight", $helvetica
 	font-weight: normal
 	overflow-x: hidden
-	color: #fff
+	color: #000
 	position: relative
 
 
+/* icon */
+.icon
+	display: inline-block
+.icon_project
+	+sprite($s-project)
+.icon_desing
+	+sprite($s-desing)
+.icon_develop
+	+sprite($s-develop)
+.icon_support
+	+sprite($s-support)
+.icon_mobile-version
+	+sprite($s-mobile-version)
+.icon_down
+	+sprite($s-down)
+	&:hover
+		+sprite($s-down_hover)
+.icon_left_yellow
+	+sprite($s-left_yellow)
+	&:hover
+		+sprite($s-left_gray)
+.icon_right_yellow
+	+sprite($s-right_yellow)
+	&:hover
+		+sprite($s-right_gray)
+/* end icon */
+
+
+/* .icon-uslugi */
+.icon-uslugi
+	font-size: 0
+	text-align: center
+.icon-uslugi__item
+	display: inline-block
+	font-size: $f-uslugi-item
+	text-transform: uppercase
+	padding: 0 60px
+.icon-uslugi__item_first
+	padding-left: 0
+.icon-uslugi__item_last
+	padding-right: 0
+.icon-uslugi__text
+	margin: 22px 0 0
+/* end .icon-uslugi */
+
+/* .gold-site */
+.gold-site
+	width: 200px
+	margin: 0 auto
+.gold-site__logo
+	float: left
+	padding-top: 5px
+.gold-site__winner
+	font-size: 12px
+	margin: 5px 0 0
+/* end .gold-site */
+
+/* .h2 */
+.h2
+	text-align: center
+.h2__text
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: $f-h1
+	color: $c-h2
+	margin: 0 0 10px
+.h2__border
+	width: 163px
+	height: 1px
+	background-color: #ffdc17
+	margin: 0 auto
+/* end .h2 */
+
+/* .desc */
+.desc
+	font-size: $f-desc
+	text-align: center
+/* end .desc */
+
+
+/* .carousel-customer */
+.carousel-customer
+	position: relative
+.carousel-customer__nav
+	position: absolute
+	top: 50%
+	+transform(translateY(-50%))
+/* end .carousel-customer */
+
+/* .section-1 */
 .section-1
 	background-color: #003571
+	text-align: center
+	padding: 26px 0 29px
+	color: #fff
+.section-1__titel
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: $f-h1
+	text-transform: uppercase
+	line-height: 1.2
+	margin: 62px 0 0
+.section-1__gold-site
+	margin-top: 50px
+.section-1__link
+	font-size: 30px
+	font-family: "BelloPro", $helvetica
+	font-weight: normal
+	color: $c-yellow
+	margin-top: 38px
+	display: inline-block
+	&:hover
+		text-decoration: none
+.section-1__icon-uslugi
+	margin-top: 50px
+.section-1__scroll-down
+	margin-top: 40px
+.section-1__scroll-down-link
+	cursor: pointer
+/* end .section-1 */
+
+/* .hr */
+.hr
+	border-top: 7px solid $c-yellow
+	border-bottom: 7px solid $c-green
+/* end .hr */
+
+/* section-2 */
+.section-2
+	padding: 49px 0
+.section-2__desc
+	margin: 65px 70px 0
+.section-2__carousel-customer
+	margin-top: 80px
+
+/* end section-2 */
+
 
 //ALWAYS END
 @import "_media.sass"

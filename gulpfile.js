@@ -5,7 +5,8 @@ sass = require('gulp-sass'),
 jade = require('gulp-jade'),
 autoprefixer = require('gulp-autoprefixer'),
 minifycss = require('gulp-minify-css'),
-rename = require('gulp-rename');
+rename = require('gulp-rename'),
+spritesmith = require('gulp.spritesmith');
 
 gulp.task('express', function() {
 	var express = require('express');
@@ -45,20 +46,39 @@ gulp.task('styles', function () {
 });
 
 gulp.task('jade', function() {
-    return gulp.src('assets/jade/*.jade')
-        .pipe(jade({
-        	pretty: true
-        })).on('error', console.log)
-        .pipe(gulp.dest('app'));
+		return gulp.src('assets/jade/*.jade')
+				.pipe(jade({
+					pretty: true
+				})).on('error', console.log)
+				.pipe(gulp.dest('app'));
+});
+
+
+gulp.task('sprite', function() {
+		var spriteData = 
+				gulp.src('assets/sprite/*.*')
+						.pipe(spritesmith({
+								imgName: 'sprite.png',
+								cssName: 'sprite.sass',
+								cssFormat: 'sass',
+								algorithm: 'binary-tree',
+								cssTemplate: 'sass.template.mustache',
+								cssVarMap: function(sprite) {
+										sprite.name = 's-' + sprite.name
+								}
+						}));
+		spriteData.img.pipe(gulp.dest('app/img/'));
+		spriteData.css.pipe(gulp.dest('assets/sass/libs/'));
 });
 
 gulp.task('watch', function() {
 	gulp.watch('assets/sass/*.sass', ['styles']);
 	gulp.watch('assets/jade/*.jade', ['jade']);
+	gulp.watch('assets/sprite/*.*', ['sprite']);
 	gulp.watch('assets/app/*.css', notifyLiveReload);
 	gulp.watch('assets/app/*.html', notifyLiveReload);
 });
 
-gulp.task('default', ['styles', 'jade', 'express', 'livereload', 'watch'], function() {
+gulp.task('default', [ 'sprite' ,'styles', 'jade', 'express', 'livereload', 'watch'], function() {
 
 });

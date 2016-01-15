@@ -1,0 +1,149 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+  */
+$s-desing-x: 149px
+$s-desing-y: 0px
+$s-desing-offset-x: -149px
+$s-desing-offset-y: 0px
+$s-desing-width: 73px
+$s-desing-height: 68px
+$s-desing-total-width: 263px
+$s-desing-total-height: 237px
+$s-desing-image: 'img/sprite.png'
+$s-desing: 149px 0px -149px 0px 73px 68px 263px 237px 'img/sprite.png'
+$s-develop-x: 0px
+$s-develop-y: 75px
+$s-develop-offset-x: 0px
+$s-develop-offset-y: -75px
+$s-develop-width: 80px
+$s-develop-height: 66px
+$s-develop-total-width: 263px
+$s-develop-total-height: 237px
+$s-develop-image: 'img/sprite.png'
+$s-develop: 0px 75px 0px -75px 80px 66px 263px 237px 'img/sprite.png'
+$s-down-x: 123px
+$s-down-y: 180px
+$s-down-offset-x: -123px
+$s-down-offset-y: -180px
+$s-down-width: 89px
+$s-down-height: 39px
+$s-down-total-width: 263px
+$s-down-total-height: 237px
+$s-down-image: 'img/sprite.png'
+$s-down: 123px 180px -123px -180px 89px 39px 263px 237px 'img/sprite.png'
+$s-down_hover-x: 123px
+$s-down_hover-y: 141px
+$s-down_hover-offset-x: -123px
+$s-down_hover-offset-y: -141px
+$s-down_hover-width: 89px
+$s-down_hover-height: 39px
+$s-down_hover-total-width: 263px
+$s-down_hover-total-height: 237px
+$s-down_hover-image: 'img/sprite.png'
+$s-down_hover: 123px 141px -123px -141px 89px 39px 263px 237px 'img/sprite.png'
+$s-left_gray-x: 222px
+$s-left_gray-y: 0px
+$s-left_gray-offset-x: -222px
+$s-left_gray-offset-y: 0px
+$s-left_gray-width: 41px
+$s-left_gray-height: 96px
+$s-left_gray-total-width: 263px
+$s-left_gray-total-height: 237px
+$s-left_gray-image: 'img/sprite.png'
+$s-left_gray: 222px 0px -222px 0px 41px 96px 263px 237px 'img/sprite.png'
+$s-left_yellow-x: 0px
+$s-left_yellow-y: 141px
+$s-left_yellow-offset-x: 0px
+$s-left_yellow-offset-y: -141px
+$s-left_yellow-width: 41px
+$s-left_yellow-height: 96px
+$s-left_yellow-total-width: 263px
+$s-left_yellow-total-height: 237px
+$s-left_yellow-image: 'img/sprite.png'
+$s-left_yellow: 0px 141px 0px -141px 41px 96px 263px 237px 'img/sprite.png'
+$s-mobile-version-x: 0px
+$s-mobile-version-y: 0px
+$s-mobile-version-offset-x: 0px
+$s-mobile-version-offset-y: 0px
+$s-mobile-version-width: 77px
+$s-mobile-version-height: 75px
+$s-mobile-version-total-width: 263px
+$s-mobile-version-total-height: 237px
+$s-mobile-version-image: 'img/sprite.png'
+$s-mobile-version: 0px 0px 0px 0px 77px 75px 263px 237px 'img/sprite.png'
+$s-project-x: 77px
+$s-project-y: 0px
+$s-project-offset-x: -77px
+$s-project-offset-y: 0px
+$s-project-width: 72px
+$s-project-height: 74px
+$s-project-total-width: 263px
+$s-project-total-height: 237px
+$s-project-image: 'img/sprite.png'
+$s-project: 77px 0px -77px 0px 72px 74px 263px 237px 'img/sprite.png'
+$s-right_gray-x: 82px
+$s-right_gray-y: 141px
+$s-right_gray-offset-x: -82px
+$s-right_gray-offset-y: -141px
+$s-right_gray-width: 41px
+$s-right_gray-height: 96px
+$s-right_gray-total-width: 263px
+$s-right_gray-total-height: 237px
+$s-right_gray-image: 'img/sprite.png'
+$s-right_gray: 82px 141px -82px -141px 41px 96px 263px 237px 'img/sprite.png'
+$s-right_yellow-x: 41px
+$s-right_yellow-y: 141px
+$s-right_yellow-offset-x: -41px
+$s-right_yellow-offset-y: -141px
+$s-right_yellow-width: 41px
+$s-right_yellow-height: 96px
+$s-right_yellow-total-width: 263px
+$s-right_yellow-total-height: 237px
+$s-right_yellow-image: 'img/sprite.png'
+$s-right_yellow: 41px 141px -41px -141px 41px 96px 263px 237px 'img/sprite.png'
+$s-support-x: 149px
+$s-support-y: 68px
+$s-support-offset-x: -149px
+$s-support-offset-y: -68px
+$s-support-width: 61px
+$s-support-height: 59px
+$s-support-total-width: 263px
+$s-support-total-height: 237px
+$s-support-image: 'img/sprite.png'
+$s-support: 149px 68px -149px -68px 61px 59px 263px 237px 'img/sprite.png'
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
