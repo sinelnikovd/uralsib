@@ -6,7 +6,7 @@
 
 @import "libs/sprite.sass"
 @import "libs/owl.carousel.sass"
-
+@import "libs/jquery.jscrollpane.sass"
 
 *::-webkit-input-placeholder
 	color: #424242
@@ -40,10 +40,100 @@ body
 	line-height: 1.3
 	font-family: "HelveticaNeueLight", $helvetica
 	font-weight: normal
-	overflow-x: hidden
 	color: #000
 	position: relative
+	background-color: #fff
 
+.container
+	width: 1200px
+
+img
+	width: auto
+
+/* nav-header */
+$gold_color: #9e8348
+
+.gold_bg
+	background-color: $gold_color
+
+.gold_border
+	border-color: $gold_color
+
+.nav-btn
+	position: absolute
+	top: 50%
+	left: 0
+	width: 22px
+	height: 43px
+	background: url('img/icons-s2baca487d5.png') no-repeat 0 -5591px
+	margin-top: -22px
+	cursor: pointer
+
+	&:hover
+		background-position: -22px -5591px
+	
+	&.nav-next
+		left: auto
+		right: 0
+		background-position: 0 -5543px
+
+	&.nav-next:hover
+		background-position: -22px -5543px
+
+.nav-white .nav__back a
+	color: #4e4e4e
+	&:hover
+		color: #1d5d96
+
+.section__space b
+	@extend .gold_bg
+
+.nav-white .nav__menu .nav__menu__contacts .btn:hover,
+.feedback .feedback__email .form-group .btn:hover
+	background-color: #1d5d96
+	border-color: #1d5d96
+
+.nav-white .nav__back a .icon__top
+	background: transparent url('img/icons-s2baca487d5.png') 0 -5666px no-repeat
+
+.nav-white .nav__back a:hover .icon__top
+	+sprite($s-up)
+/* end nav-header */
+
+/* footer */
+.pagenavi
+	padding-top: 100px
+.pagenavi .pagenavi__post a:hover
+	border-color: #1d5d96
+	color: #1d5d96
+.pagenavi .pagenavi__post.is-left a:hover:before
+	+sprite($s-footer-left_blue)
+.pagenavi .pagenavi__post.is-right a:hover:before
+	+sprite($s-footer-right_blue)
+
+.vista
+	background-color: #003571
+/* end footer */
+
+
+/* jscrollpane */
+.jspVerticalBar
+	background-color: transparent
+	width: 7px
+.jspTrack
+	background-color: transparent
+.jspDrag
+	border-radius: 3px
+	background-color: rgba(0,0,0,.5)
+
+/* end jscrollpane */
+
+.uralsib_page
+	position: relative
+	z-index: 2
+	overflow: hidden
+	padding-top: 113px
+	min-width: 1200px
 
 /* icon */
 .icon
@@ -72,6 +162,10 @@ body
 		+sprite($s-right_gray)
 .icon_quote
 	+sprite($s-quote)
+.icon_bitrix
+	+sprite($s-bitrix)
+.icon_gold-site-invert
+	+sprite($s-gold-site-invert)
 /* end icon */
 
 
@@ -83,7 +177,8 @@ body
 	display: inline-block
 	font-size: $f-uslugi-item
 	text-transform: uppercase
-	padding: 0 60px
+	width: 234px
+	text-align: center
 .icon-uslugi__item_first
 	padding-left: 0
 .icon-uslugi__item_last
@@ -114,11 +209,14 @@ body
 	color: $c-h2
 	margin: 0 0 10px
 	text-transform: uppercase
+.h2__text_white
+	color: #fff
 .h2__border
 	width: 163px
 	height: 1px
 	background-color: #ffdc17
 	margin: 0 auto
+
 /* end .h2 */
 
 /* .desc */
@@ -195,20 +293,35 @@ body
 
 /* carousel-function-text */
 .carousel-function-text__desc
-	font-weight: bold
-	margin: 0 220px
+	margin: 0
 /* end carousel-function-text */
 
 /* carousel-function */
+.carousel-function-img
+	width: 665px
+	margin: 0 auto
+.carousel-function-img__item
+	height: 590px
+.carousel-function-img__img
+	width: 664px
+	height: 374px
+	position: absolute
+	bottom: 0
+	left: 50%
+	+transform(translateX(-50%))
 .carousel-function__navigation
 	position: absolute
-	top: 115px
+	top: 50%
+	+transform(translateY(-50%))
 	z-index: 2
+	cursor: pointer
+
 
 .carousel-function__nav
-	position: relative
+	position: absolute
 	width: 100%
 	height: 100%
+
 .carousel-function__prev
 	@extend .carousel-function__navigation
 	left: 60px
@@ -245,6 +358,7 @@ body
 	display: inline-block
 	&:hover
 		text-decoration: none
+		color: $c-green
 .section-1__icon-uslugi
 	margin-top: 50px
 .section-1__scroll-down
@@ -262,6 +376,7 @@ body
 /* section-2 */
 .section-2
 	padding: 49px 0
+	background-color: #fff
 .section-2__desc
 	margin: 65px 70px 0
 .section-2__carousel-customer
@@ -278,8 +393,6 @@ body
 	box-sizing: border-box
 	position: relative
 	overflow: hidden
-.section-3__h2-text
-	color: #fff
 .section-3__bacground
 	position: absolute
 	top: 0
@@ -296,6 +409,7 @@ body
 .section-4
 	padding-top: 180px
 	position: relative
+	background-color: #fff
 .section-4__client
 	height: 610px
 .section-4__investors
@@ -354,6 +468,7 @@ body
 .section-6
 	text-align: center
 	padding-top: 60px
+	background-color: #fff
 .section-6__desc_first
 	margin-top: 60px
 .section-6__picture_icon
@@ -371,32 +486,107 @@ body
 	+linear-gradient( #1e5e97 0%, #003571 30%)
 	color: #fff
 	padding: 30px 0 0
-.section-7__h2-text
-	color: #fff
 .section-7__h3
 	font-family: "HelveticaNeueUltralight", $helvetica
 	font-weight: normal
 	font-size: $f-name
+	letter-spacing: 1px
 	text-align: center
-	margin: 40px 0 0
+	margin: 0 0 17px
 .section-7__carousel-function-text
-	margin-top: 17px
+	margin-top: 40px
 .section-7__monitor
-	height: 630px
-	background-image: url('img/monitor.png')
-	background-repeat: no-repeat
-	background-position: center top
+	height: 830px
 	position: relative
-	margin-top: 50px
-.section-7__carousel-function-img
-	position: absolute
-	top: 32px
-	width: 665px
-	height: 375px
-	left: 50%
-	+transform(translateX(-50%))
+	margin-top: 42px
+	&:after
+		content: ''
+		bottom: 50px
+		left: 50%
+		+transform(translateX(-50%))
+		width: 776px
+		height: 596px
+		position: absolute
+		background-image: url('img/monitor.png')
 
 /* end section-7 */
 
+/* section-8 */
+.section-8
+	padding: 125px 0 90px
+	background-color: #f0f0f0
+.section-8__icon
+	margin-right: 35px
+	vertical-align: middle
+.section-8__titile
+	display: inline-block
+	width: 250px
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: 33px
+	vertical-align: middle
+.section-8__desc
+	display: inline-block
+	width: 400px
+	font-size: $f-desc
+	vertical-align: middle
+/* end section-8 */
+
+/* section-9 */
+.section-9
+	padding: 95px 0 60px
+	background-color: #fff
+	height: 861px
+	width: 100%
+.section-9__h2
+	margin-top: 180px
+.section-9__desc
+	margin: 40px 60px 0
+.section-9__block_right
+	position: relative
+.section-9__mobile-version
+	position: absolute
+	top: 113px
+	left: 93px
+	width: 295px
+	height: 494px
+	background-color: #000
+	overflow: auto
+.flipping
+	position: absolute
+	top: 25px
+	left: 405px
+	font-size: 26px
+	color: #1d5d96
+	font-family: "BelloPro"
+	&:after
+		position: absolute
+		top: 30px
+		left: -30px
+		content: ''
+		+sprite($s-flipping)
+/* end section-9 */
+
+/* section-10 */
+.section-10
+	background-image: url('img/bg-result.jpg')
+	background-repeat: repeat-x
+	background-position: center top
+	padding: 115px 0 130px
+	color: #fff
+.section-10__result
+	margin-top: 115px
+	padding-left: 65px
+.section-10__desc
+	display: inline-block
+	margin-left: 100px
+	font-family: "HelveticaNeueUltralight", $helvetica
+	font-weight: normal
+	font-size: $f-name
+	vertical-align: middle
+.section-10__icon
+	vertical-align: middle
+/* end section-10 */
+
 //ALWAYS END
-@import "_media.sass"
+//@import "_media.sass"
